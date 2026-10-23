@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Slow Feed",
+  "version": "1.0.0",
+  "description": "Read your X timeline one tweet at a time.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "Slow Feed",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/slowfeed-16.png",
+      "32": "icons/slowfeed-32.png",
+      "48": "icons/slowfeed-48.png",
+      "128": "icons/slowfeed-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/slowfeed-16.png",
+    "32": "icons/slowfeed-32.png",
+    "48": "icons/slowfeed-48.png",
+    "128": "icons/slowfeed-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["content.js"],
+      "css": ["font.css", "content.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["route.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["PPNeueMontreal-Book.otf"],
+      "matches": ["https://x.com/*", "https://twitter.com/*"]
+    }
+  ]
+}

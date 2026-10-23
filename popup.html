@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slow Feed</title>
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <main class="sf-popup">
+    <h1 class="sf-heading">Slow Feed</h1>
+    <label class="sf-toggle-row" for="sf-enabled">
+      <span>On</span>
+      <input class="sf-toggle" id="sf-enabled" type="checkbox" role="switch" disabled>
+    </label>
+    <fieldset class="sf-timer-row" id="sf-timer-row" disabled>
+      <legend class="sf-timer-label">Time per tweet</legend>
+      <div class="sf-segments">
+        <label class="sf-option">
+          <input class="sf-radio" type="radio" name="sf-timer" value="3">
+          <span class="sf-option-label">3s</span>
+        </label>
+        <label class="sf-option">
+          <input class="sf-radio" type="radio" name="sf-timer" value="30">
+          <span class="sf-option-label">30s</span>
+        </label>
+        <label class="sf-option">
+          <input class="sf-radio" type="radio" name="sf-timer" value="60">
+          <span class="sf-option-label">60s</span>
+        </label>
+      </div>
+    </fieldset>
+  </main>
+</body>
+</html>

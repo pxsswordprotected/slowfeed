@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "sf-PPNeueMontreal";
+  src: url("chrome-extension://__MSG_@@extension_id__/PPNeueMontreal-Book.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}

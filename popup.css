@@ -1,0 +1,148 @@
+:root {
+  color-scheme: light dark;
+  --sf-popup-bg: #FFFFFF;
+  --sf-popup-text: #0F1419;
+  --sf-popup-secondary: #536471;
+  --sf-popup-border: #EFF3F4;
+  --sf-accent: #1D9BF0;
+  --sf-control-text: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sf-popup-bg: #000000;
+    --sf-popup-text: #E7E9EA;
+    --sf-popup-secondary: #71767B;
+    --sf-popup-border: #2F3336;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 280px;
+  margin: 0;
+  background: var(--sf-popup-bg);
+  color: var(--sf-popup-text);
+  font: 15px/1.4 "sf-PPNeueMontreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.sf-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.sf-heading {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sf-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.sf-toggle {
+  appearance: none;
+  flex: none;
+  width: 40px;
+  height: 24px;
+  margin: 0;
+  padding: 2px;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--sf-popup-border);
+  cursor: pointer;
+}
+
+.sf-toggle::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: var(--sf-control-text);
+}
+
+.sf-toggle:checked {
+  background: var(--sf-accent);
+}
+
+.sf-toggle:checked::before {
+  margin-left: 16px;
+}
+
+.sf-toggle:focus-visible,
+.sf-radio:focus-visible + .sf-option-label {
+  outline: 2px solid var(--sf-accent);
+  outline-offset: 3px;
+}
+
+.sf-toggle:disabled {
+  cursor: default;
+}
+
+.sf-timer-row {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.sf-timer-row:disabled {
+  opacity: 0.5;
+}
+
+.sf-timer-label {
+  margin-bottom: 8px;
+  padding: 0;
+  color: var(--sf-popup-secondary);
+}
+
+.sf-segments {
+  display: flex;
+  border: 1px solid var(--sf-popup-border);
+  border-radius: 9999px;
+}
+
+.sf-option {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.sf-option + .sf-option {
+  border-left: 1px solid var(--sf-popup-border);
+}
+
+.sf-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.sf-option-label {
+  display: block;
+  padding: 6px 0;
+  border-radius: 9999px;
+  text-align: center;
+}
+
+.sf-radio:checked + .sf-option-label {
+  background: var(--sf-accent);
+  color: var(--sf-control-text);
+}
+
+.sf-timer-row:disabled .sf-option {
+  cursor: default;
+}
